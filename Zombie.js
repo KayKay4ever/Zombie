@@ -1,8 +1,9 @@
+
 AFRAME.registerComponent('Z0MB1E',{
     init:function() {
-        var posX= -150
-        var posY= -50
-        var posZ= -3
+        var posX= -50
+        var posY= -3
+        var posZ= -150
 for (var i=1; i<=3; i++){
     var id= 'Z0MB1E${i}'; 
     var position= {x:posX, y:posY, z:posZ};
@@ -17,6 +18,8 @@ for (var i=1; i<=3; i++){
     zombEL.setAttribute('scale', '25 25 25')
     zombEL.setAttribute('position', position)
     zombEL.setAttribute('animation-mixer',{clip:'Walk'})
-
+    zombEL.setAttribute("id", id) 
+    zombEL.setAttribute('animation',{property:'position',to:'-10 0 1000', loop:'true', duration:'150000'})
+    environEL.appendChild(zombEL)
     }
 }) 
